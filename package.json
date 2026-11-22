@@ -1,0 +1,15 @@
+{
+  "name": "devi-portfolio",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i src/site.css -o site/assets/site.css --minify",
+    "dev": "python3 -m http.server 8000 --bind 0.0.0.0 --directory site"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.17",
+    "tailwindcss": "4.1.17",
+    "@fontsource-variable/manrope": "5.2.8",
+    "@fontsource-variable/playfair-display": "5.2.8",
+    "gsap": "3.13.0"
+  }
+}
