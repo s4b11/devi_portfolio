@@ -1,3 +1,14 @@
+const header = document.querySelector(".site-header");
+
+function updateHeader() {
+  const compact = header.classList.contains("is-compact");
+  header.classList.toggle("is-compact", window.scrollY > (compact ? 32 : 96));
+}
+
+window.addEventListener("scroll", updateHeader, { passive: true });
+window.addEventListener("pageshow", updateHeader);
+updateHeader();
+
 if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 

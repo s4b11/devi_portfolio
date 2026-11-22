@@ -49,7 +49,7 @@ h2 { font-size: clamp(2.8rem, 5.2vw, 4.6rem); margin-top: .12em; }
 .button { display: inline-flex; align-items: center; gap: 1.25rem; width: fit-content; padding: .74rem 1rem; color: white; background: var(--ink); border-radius: 4px; font-size: .88rem; font-weight: 800; transition: background-color .18s; }
 .button:hover { background: var(--accent); }
 .portrait { width: min(100%, 350px); position: relative; justify-self: center; }
-.portrait-frame { border-radius: 50% 50% 4px 4px / 38% 38% 4px 4px; overflow: hidden; background: #b4c1d4; }
+.portrait-frame { border-radius: 50% 50% 4px 4px / 38% 38% 4px 4px; overflow: hidden; background: #e4def0; }
 .portrait-frame img { display: block; width: 100%; height: auto; }
 .portrait-spark { position: absolute; top: 13%; right: -15px; width: 32px; height: 32px; color: var(--accent); }
 .portrait-spark::before, .portrait-spark::after { content: ""; position: absolute; inset: 0; background: linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat, linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat; }
@@ -112,3 +112,45 @@ h3 { font-size: 1.27rem; font-weight: 800; line-height: 1.35; margin-block: .3re
   *, *::before, *::after { transition: none !important; }
 }
 [data-reveal]:focus-within { opacity: 1 !important; transform: none !important; }
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #796d94 var(--paper);
+  scroll-padding-top: 84px;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--paper);
+  overflow-anchor: none;
+}
+.skip-link { position: fixed; z-index: 11; }
+.header-inner { transition: min-height .18s ease, padding-block .18s ease; }
+.site-header.is-compact .header-inner { min-height: 55px; }
+.icon {
+  display: inline-block;
+  flex: none;
+  width: 1.2em;
+  height: 1.2em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.hero-actions .button, .hero-actions .text-link { gap: .55rem; }
+.hero-actions .text-link, .icon-tags li { display: inline-flex; align-items: center; }
+.icon-tags li { gap: .42rem; }
+.icon-tags .icon, .text-link .icon { color: var(--accent); }
+@media (max-width: 760px) {
+  .split-section { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+}
+@media (max-width: 600px) {
+  html { scroll-padding-top: 112px; }
+  .header-inner { column-gap: .6rem; }
+  .site-header.is-compact .header-inner { padding-block: .38rem; }
+  nav a { padding-block: .25rem; }
+  .header-contact { white-space: nowrap; }
+  h1 { font-size: clamp(3rem, 13vw, 5rem); }
+}
