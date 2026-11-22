@@ -27,5 +27,20 @@ if (window.gsap && window.ScrollTrigger) {
         }
       });
     });
+
+    document.querySelectorAll(".project-art").forEach((preview) => {
+      const bars = preview.querySelectorAll("[data-preview-bar]");
+      const steps = preview.querySelectorAll("[data-preview-step]");
+      const animation = gsap.timeline({
+        scrollTrigger: { trigger: preview, start: "top 85%", once: true }
+      });
+      animation.from(steps.length ? steps : bars, {
+        ...(steps.length ? { opacity: 0, y: 8 } : { scaleY: 0 }),
+        duration: 0.42,
+        stagger: 0.09,
+        ease: "power2.out",
+        immediateRender: false
+      });
+    });
   });
 }

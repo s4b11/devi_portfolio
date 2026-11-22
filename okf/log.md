@@ -2,6 +2,7 @@
 
 ## 2026-11-22
 
+- Added technology icons to the project cards and replaced the placeholder illustrations with animated HTML previews.
 - Turned the arms-crossed anime avatar toward the viewer’s left and updated the local WebP.
 - Replaced the hero portrait with an arms-crossed anime avatar. Added the compacting sticky header, thin scrollbar, and local icons. Verified the responsive layout and navigation in Chromium.
 - Pushed the static build to `gh-pages` and documented the repository name and Pages settings needed for the `/devishaju/` URL.

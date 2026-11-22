@@ -60,24 +60,61 @@ h2 { font-size: clamp(2.8rem, 5.2vw, 4.6rem); margin-top: .12em; }
 .section-intro { margin-bottom: 2rem; }
 .project-grid { align-items: stretch; }
 .project { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fcfbf8; }
-.project-art { position: relative; height: clamp(160px, 19vw, 230px); overflow: hidden; display: grid; place-items: center; }
-.learning { background: #e5e0f1; }
-.analytics { background: #dce7ec; }
-.orbit { position: absolute; width: 215px; height: 112px; border: 1px solid #8c78bd; border-radius: 50%; transform: rotate(-24deg); }
-.orbit-inner { transform: rotate(24deg); }
-.orbit-center { display: grid; place-content: center; grid-auto-flow: column; width: 70px; height: 70px; border-radius: 50%; background: #413478; color: white; font: 600 2rem var(--serif); z-index: 1; }
-.orbit-center span { color: #ded4fa; }
-.node { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #6954a2; }
-.node-one { transform: translate(-96px, 36px); }
-.node-two { transform: translate(98px, 39px); }
-.node-three { transform: translate(91px, -41px); }
-.chart { width: min(64%, 290px); height: 70%; gap: 7%; padding-inline: 5%; border-left: 1px solid #8198aa; border-bottom: 1px solid #8198aa; background: repeating-linear-gradient(to top, transparent 0 calc(25% - 1px), #bbcbd5 calc(25% - 1px) 25%); }
-.chart i { height: 37%; border-radius: 3px 3px 0 0; background: #7997ac; }
-.chart i:nth-child(2) { height: 54%; }
-.chart i:nth-child(3) { height: 48%; }
-.chart i:nth-child(4) { height: 76%; }
-.chart i:nth-child(5) { height: 65%; }
-.chart i:nth-child(6) { height: 91%; background: #344f69; }
+.project-art {
+  display: grid;
+  place-items: center;
+  padding: clamp(14px, 3.2vw, 36px);
+  background: var(--preview-backdrop);
+  color: var(--preview-ink);
+}
+.learning { --preview-backdrop: #e5e0f1; --preview-ink: #413478; --preview-tint: #f2eef9; }
+.analytics { --preview-backdrop: #dce7ec; --preview-ink: #294e65; --preview-tint: #eaf2f6; }
+.preview-window {
+  width: min(100%, 380px);
+  border: 1px solid #fff;
+  border-radius: 8px;
+  background: #fcfbff;
+  box-shadow: 0 8px 22px #1b24341a;
+  overflow: hidden;
+}
+.preview-header, .preview-bottom { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+.preview-header {
+  padding: .52rem .75rem;
+  background: var(--preview-tint);
+  font-size: .65rem;
+  font-weight: 700;
+}
+.preview-brand { font-size: .76rem; font-weight: 800; }
+.preview-content { padding: .75rem; }
+.preview-label { margin-bottom: .55rem; font-size: .75rem; font-weight: 800; }
+.match-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem; }
+.match-person, .match-step {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: .3rem;
+  height: 80px;
+  border-radius: 6px;
+  background: var(--preview-tint);
+  font-size: .69rem;
+  font-weight: 800;
+}
+.match-step { background: var(--preview-ink); color: white; }
+.match-flow .icon { width: 1.3rem; height: 1.3rem; }
+.preview-bottom { flex-wrap: wrap; justify-content: flex-start; gap: .3rem 1rem; margin-top: .58rem; font-size: .63rem; font-weight: 750; }
+.preview-bottom span { display: inline-flex; align-items: center; gap: .3rem; }
+.sales-chart {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  height: 80px;
+  gap: .35rem;
+  background: repeating-linear-gradient(to bottom, var(--preview-tint) 0 1px, transparent 1px 18px);
+}
+.sales-column { display: grid; grid-template-rows: 1fr auto; justify-items: center; align-items: end; font-size: .63rem; font-weight: 750; }
+.sales-bar { width: min(57%, 35px); height: 55%; background: #7296aa; border-radius: 3px 3px 0 0; transform-origin: bottom; }
+.sales-column:nth-child(2) .sales-bar { height: 86%; background: var(--preview-ink); }
+.sales-column:nth-child(3) .sales-bar { height: 46%; }
+.sales-column:nth-child(4) .sales-bar { height: 72%; }
 .project-body { padding: clamp(20px, 3vw, 34px); }
 h3 { font-size: 1.27rem; font-weight: 800; line-height: 1.35; margin-block: .3rem .5rem; }
 .project-body > p:not(.eyebrow), .timeline-item > p:last-child, .about-content p, .contact > div > p:not(.eyebrow) { color: var(--muted); }
